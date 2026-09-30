@@ -1,0 +1,2 @@
+import { createFileRoute } from "@tanstack/react-router";import { OrderPage } from "@/components/shop/ShopPages";
+export const Route=createFileRoute("/orders/$orderId")({head:()=>({meta:[{title:"پیگیری سفارش | سوپرمارکت زمانی"},{name:"description",content:"وضعیت آماده‌سازی و ارسال سفارش خود را پیگیری کنید."},{property:"og:title",content:"پیگیری سفارش | سوپرمارکت زمانی"},{property:"og:description",content:"وضعیت آماده‌سازی و ارسال سفارش خود را پیگیری کنید."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:OrderPage});
