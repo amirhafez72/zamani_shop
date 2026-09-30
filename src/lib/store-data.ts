@@ -30,7 +30,6 @@ export const products: Product[] = [
 {id:"dish",name:"مایع ظرفشویی سبز",category:"cleaning",brand:"پریل",unit:"۱ لیتر",price:126000,rating:4.6,reviews:62,stock:9,image:dishImg,description:"پاک‌کنندگی قوی و رایحه ملایم برای ظروف."},
 {id:"lentil",name:"عدس درشت ممتاز",category:"rice",brand:"زمانی",unit:"۹۰۰ گرم",price:168000,oldPrice:184000,rating:4.7,reviews:38,stock:17,image:lentilImg,description:"عدس درشت، پاک‌شده و مناسب انواع غذاهای ایرانی."}
 ];
-export const productById=(id:string)=>products.find(p=>p.id===id);
 export const formatPrice=(n:number)=>`${new Intl.NumberFormat("fa-IR").format(n)} تومان`;
 export const toFa=(n:number|string)=>new Intl.NumberFormat("fa-IR").format(Number(n));
 export const discount=(p:Product)=>p.oldPrice?Math.round((1-p.price/p.oldPrice)*100):0;
