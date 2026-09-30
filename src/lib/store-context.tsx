@@ -1,7 +1,9 @@
+import type React from "react";
 import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 import { products, type Product } from "./store-data";
 type Store={cart:Record<string,number>; add:(id:string)=>void; remove:(id:string)=>void; setQty:(id:string,n:number)=>void; count:number; subtotal:number; savings:number; clear:()=>void; signedIn:boolean; setSignedIn:(v:boolean)=>void};
-const StoreContext=createContext<Store|undefined>(undefined);
+const g=globalThis as unknown as {__zamaniStoreCtx?:React.Context<Store|undefined>};
+const StoreContext=g.__zamaniStoreCtx??(g.__zamaniStoreCtx=createContext<Store|undefined>(undefined));
 export function StoreProvider({children}:{children:ReactNode}){
  const [cart,setCart]=useState<Record<string,number>>({}); const [signedIn,setSignedIn]=useState(false);
  const add=(id:string)=>setCart(c=>({...c,[id]:(c[id]??0)+1}));
