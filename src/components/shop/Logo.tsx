@@ -1,0 +1,2 @@
+import { ShoppingBasket } from "lucide-react";
+export function Logo({compact=false}:{compact?:boolean}){return <div className="flex shrink-0 items-center gap-2" aria-label="سوپرمارکت زمانی"><span className="relative grid size-10 place-items-center rounded-lg bg-primary text-primary-foreground"><ShoppingBasket className="size-5"/><span className="absolute -left-0.5 -top-0.5 size-3 rounded-full bg-accent"/></span>{!compact&&<span className="text-base font-bold text-foreground sm:text-lg">سوپرمارکت زمانی</span>}</div>}
