@@ -15,3 +15,17 @@
 .hero-overlay{background:linear-gradient(to left,rgba(250,249,247,0),rgba(250,249,247,.35),rgba(250,249,247,.95))}
 .dark .hero-overlay{background:linear-gradient(to left,rgba(33,31,29,0),rgba(33,31,29,.35),rgba(33,31,29,.95))}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Opaque menu surfaces: no color-mix, OKLCH or backdrop-filter dependency. */
+:root, .dark { --mobile-menu-background: #fff; --mobile-menu-foreground: #292522; }
+@media (max-width: 767px) {
+  .mobile-menu-surface {
+    --foreground: var(--mobile-menu-foreground);
+    --popover-foreground: var(--mobile-menu-foreground);
+    --muted-foreground: #756e68;
+    background-color: var(--mobile-menu-background);
+    color: var(--mobile-menu-foreground);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

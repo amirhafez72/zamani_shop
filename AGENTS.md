@@ -10,3 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Keep supermarket demo data in `src/lib/store-data.ts` and shared cart/auth UI state in `StoreProvider`; this keeps all customer and admin routes consistent while remaining API-replaceable.
+
+- Apply the shared `mobile-menu-surface` class to navigation and portaled menu panels; plain CSS tokens keep their opaque surfaces independent of modern color functions.
